@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""count it"""
+"""recursive function that queries the Reddit API"""
 
 import json
 import requests
@@ -13,7 +13,7 @@ def count_words(subreddit, word_list, after='', hot_list=[]):
         .format(subreddit)
     request = requests.get(url, params={'after': after},
                            allow_redirects=False,
-                           headers={'User-Agent': 'My API advanced 1.0'})
+                           headers={'User-Agent': 'My User Agent 1.0'})
     if request.status_code == 200:
         data = request.json()
 
